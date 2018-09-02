@@ -7,6 +7,6 @@ Navigation.registerComponent("com.spykins.vanonews.HomeScreen", () => HomeScreen
 Navigation.startSingleScreenApp({
   screen: {
     screen: "com.spykins.vanonews.HomeScreen",
-    title: 'Welcome'
+    title: 'News'
   }
 });
