@@ -12,7 +12,7 @@ export default class HomeScreen extends Component {
     render() {
       return (
         <View style={styles.container}>
-          <Text testID="welcome" style={styles.welcome}>Welcome to Vano News App</Text>
+          <Text testID="welcome" style={styles.welcome}> to Vano News YOH!</Text>
           <Text style={styles.instructions}>To get started, Set up Icons and testing</Text>
           <Text style={styles.instructions}>{instructions}</Text>
           <Text testID="welcome">Holla</Text>

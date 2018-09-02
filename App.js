@@ -1,12 +1,13 @@
 
 import { Navigation } from 'react-native-navigation';
-import HomeScreen from './src/navigation/HomeScreen';
+import registerScreens from './src/screens/navigation/navigatorRegistrar/screenRegistrar';
+import {HOME_SCREEN} from './src/utility/screenConstants';
 
-Navigation.registerComponent("com.spykins.vanonews.HomeScreen", () => HomeScreen);
+registerScreens();
 
 Navigation.startSingleScreenApp({
   screen: {
-    screen: "com.spykins.vanonews.HomeScreen",
+    screen: HOME_SCREEN,
     title: 'News'
   }
 });
