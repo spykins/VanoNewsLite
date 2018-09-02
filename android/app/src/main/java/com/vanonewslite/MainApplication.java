@@ -1,9 +1,6 @@
 package com.vanonewslite;
 
-import android.app.Application;
-
 import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 
 import java.util.Arrays;
@@ -22,7 +19,6 @@ public class MainApplication extends NavigationApplication {
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
             // eg. new VectorIconsPackage()
-            new MainReactPackage()
     );
   }
 
