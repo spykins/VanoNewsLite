@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { FAVOURITE_SCREEN, CONTINENT_SCREEN, HOME_SCREEN } from '../../utility/screenConstants';
-import { FAVOURITE_SCREEN_TITLE, CONTINENT_SCREEN_TITLE, HOME_SCREEN_TITLE } from '../../utility/screenTitleConstants';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { connect} from 'react-redux';
 
@@ -34,20 +33,15 @@ class SideDrawer extends Component {
     //TODO: move this function to the calling function or manage by redux
     pushNewNavigationScreen = (screenTapped) => {
         let screen;
-        let title;
-
         switch (screenTapped) {
             case FAVOURITE_TAPPED:
                 screen = FAVOURITE_SCREEN;
-                title = FAVOURITE_SCREEN_TITLE;
                 break;
             case CONTINENT_TAPPED:
                 screen = CONTINENT_SCREEN;
-                title = CONTINENT_SCREEN_TITLE;
                 break;
             default:
                 screen = HOME_SCREEN;
-                title = HOME_SCREEN_TITLE
         }
         this.props.onScreenTapped(screen);
         this.closeNavigation();

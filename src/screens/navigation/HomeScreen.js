@@ -20,6 +20,7 @@ export default class HomeScreen extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
 
+  //TODO: refactor duplicate code in Favourite, continent and HomeScreen, pass a props or dispatch an action to handle it
   onNavigatorEvent = (event) => {
     if (event.type === "NavBarButtonPress") {
       if (event.id === SIDE_DRAWER_TOGGLE_EVENT_ID) {

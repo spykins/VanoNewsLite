@@ -9,18 +9,18 @@ const reducer = (state = initialState, action) => {
         case FAVOURITE_SCREEN:
         console.log("reducer: ", action.type);
         return {
-            screenTapped: FAVOURITE_SCREEN
+            screenTapped: action.type
         }
         case CONTINENT_SCREEN:
         console.log("reducer: ", action.type);
         return {
-            screenTapped: CONTINENT_SCREEN
+            screenTapped: action.type
         }
         default:
         console.log("reducer: ", action.type);
 
         return {
-            screenTapped: HOME_SCREEN
+            screenTapped: action.type
         }
 
     }
