@@ -8,7 +8,12 @@ const instructions = Platform.select({
       'Shake or press menu button for dev menu',
   });
 
+
 export default class HomeScreen extends Component {
+  static navigatorStyle = {
+    navBarButtonColor: "orange",
+  }
+
     render() {
       return (
         <View style={styles.container}>
