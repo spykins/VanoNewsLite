@@ -5,7 +5,7 @@ import registerScreens from './src/screens/navigation/navigatorRegistrar/screenR
 import {
   HOME_SCREEN,
   SIDE_DRAWER,
-  SIDE_DRAWER_TOGGLE
+  SIDE_DRAWER_TOGGLE_EVENT_ID
 } from './src/utility/screenConstants';
 import Icon from 'react-native-vector-icons/Ionicons'
 import {
@@ -24,7 +24,7 @@ Icon.getImageSource(Platform.OS === 'android' ? "md-menu" : 'ios-menu', 30)
             leftButtons: [{
               icon,
               title: 'Menu',
-              id: SIDE_DRAWER_TOGGLE
+              id: SIDE_DRAWER_TOGGLE_EVENT_ID
             }]
           },
         },

@@ -1,3 +1,3 @@
 export const HOME_SCREEN = "com.spykins.vanonews.HomeScreen";
 export const SIDE_DRAWER = "com.spykins.vanonews.SideDrawer";
-export const SIDE_DRAWER_TOGGLE = "sideDrawerToggle";
+export const SIDE_DRAWER_TOGGLE_EVENT_ID = "sideDrawerToggle";
