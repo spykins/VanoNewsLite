@@ -5,14 +5,18 @@ import registerScreens from './src/screens/navigation/navigatorRegistrar/screenR
 import {
   HOME_SCREEN,
   SIDE_DRAWER,
+  CONTINENT_SCREEN,
+  FAVOURITE_SCREEN,
   SIDE_DRAWER_TOGGLE_EVENT_ID
 } from './src/utility/screenConstants';
 import Icon from 'react-native-vector-icons/Ionicons'
 import {
   Platform
 } from 'react-native'
+import configureStore from "./src/store/configureStore";
 
-registerScreens();
+const store = configureStore();
+registerScreens(store);
 
 Icon.getImageSource(Platform.OS === 'android' ? "md-menu" : 'ios-menu', 30)
   .then((icon) => {

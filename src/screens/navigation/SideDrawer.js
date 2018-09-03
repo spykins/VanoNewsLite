@@ -3,6 +3,8 @@ import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Platform } from '
 import { FAVOURITE_SCREEN, CONTINENT_SCREEN, HOME_SCREEN } from '../../utility/screenConstants';
 import { FAVOURITE_SCREEN_TITLE, CONTINENT_SCREEN_TITLE, HOME_SCREEN_TITLE } from '../../utility/screenTitleConstants';
 import Icon from 'react-native-vector-icons/Ionicons'
+import { connect} from 'react-redux';
+
 
 //TODO: move this to constant class.. if it is ever used anywhere else
 
@@ -47,12 +49,7 @@ class SideDrawer extends Component {
                 screen = HOME_SCREEN;
                 title = HOME_SCREEN_TITLE
         }
-
-        console.log("screen ", screen, " title ", title);
-        this.props.navigator.resetTo({
-            screen,
-            title
-        });
+        this.props.onScreenTapped(screen);
         this.closeNavigation();
     }
 
@@ -104,4 +101,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SideDrawer;
+const mapDispatchToProps = dispatch => {
+    return {
+        onScreenTapped: (screenId) => dispatch(
+            {type: screenId})
+    }
+};
+
+export default connect(null, mapDispatchToProps)(SideDrawer);
