@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { SIDE_DRAWER_TOGGLE_EVENT_ID, COUNTRY_SCREEN } from '../../utility/screenConstants'
-import continent from '../../resources/vanonews.json';
+//TODO: move this to the store
+import newsObject from '../../resources/vanonews.json';
 import ContinentListItem from '../list/ContinentListItem';
 export default class ContinentScreen extends Component {
 
@@ -15,7 +16,7 @@ export default class ContinentScreen extends Component {
 
     componentDidMount() {
         this.setState(() => ({
-            continent: Object.keys(continent).map(continent => ({key: continent, continent: continent}))
+            continent: Object.keys(newsObject).map(continent => ({key: continent, continent: continent}))
         }));
     }
 
@@ -31,10 +32,13 @@ export default class ContinentScreen extends Component {
     }
 
     handleOnContinentItemPressed = (continent) => {
-        console.log(">>>>>>> ", continent);
         this.props.navigator.push({
             screen:COUNTRY_SCREEN,
-            title: continent
+            title: continent,
+            passProps: {
+                continent,
+                newsObject
+            }
         })
         
     }
