@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { SIDE_DRAWER_TOGGLE_EVENT_ID } from '../../utility/screenConstants'
-
+import xmlDom from 'xmldom';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -10,6 +10,8 @@ const instructions = Platform.select({
 });
 
 
+let DOMParser = xmlDom.DOMParser;
+    
 export default class HomeScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange",
@@ -18,6 +20,18 @@ export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
+  }
+
+  componentDidMount() {
+    fetch('https://punchng.com/feed/')
+        .then(response => response.text())
+        .then((responseText) => {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(responseText,"text/xml").documentElement;
+          console.log("************", doc);
+        }).catch((err) => {
+            console.log('fetch', err)
+        });
   }
 
   //TODO: refactor duplicate code in Favourite, continent and HomeScreen, pass a props or dispatch an action to handle it
