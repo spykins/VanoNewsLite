@@ -23,6 +23,7 @@ export default class HomeScreen extends Component {
   }
 
   componentDidMount() {
+    //TODO: move to a datafetcher data class for that purpose
     fetch('https://punchng.com/feed/')
         .then(response => response.text())
         .then((responseText) => {
