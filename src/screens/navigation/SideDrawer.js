@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { FAVOURITE_SCREEN, CONTINENT_SCREEN, HOME_SCREEN } from '../../utility/screenConstants';
+import { FAVOURITE_SCREEN_TITLE, CONTINENT_SCREEN_TITLE, HOME_SCREEN_TITLE } from '../../utility/screenTitleConstants';
 import Icon from 'react-native-vector-icons/Ionicons'
 
+//TODO: move this to constant class.. if it is ever used anywhere else
+
+const HOME_TAPPED = "feedScreenTapped";
+const FAVOURITE_TAPPED = "favouriteScreen";
+const CONTINENT_TAPPED = "continentScreen";
 
 class SideDrawer extends Component {
 
     handleFeedNavButton = () => {
-        this.closeNavigation();
+        this.pushNewNavigationScreen(HOME_TAPPED);
     }
 
     handleContinentNavButton = () => {
-        this.closeNavigation();
+        this.pushNewNavigationScreen(CONTINENT_TAPPED);
     }
 
     handleFavouriteNavButton = () => {
-        this.closeNavigation();
+        this.pushNewNavigationScreen(FAVOURITE_TAPPED);
     }
 
     closeNavigation = () => {
@@ -22,7 +29,34 @@ class SideDrawer extends Component {
             side: "left"
         });
     }
+    //TODO: move this function to the calling function or manage by redux
+    pushNewNavigationScreen = (screenTapped) => {
+        let screen;
+        let title;
 
+        switch (screenTapped) {
+            case FAVOURITE_TAPPED:
+                screen = FAVOURITE_SCREEN;
+                title = FAVOURITE_SCREEN_TITLE;
+                break;
+            case CONTINENT_TAPPED:
+                screen = CONTINENT_SCREEN;
+                title = CONTINENT_SCREEN_TITLE;
+                break;
+            default:
+                screen = HOME_SCREEN;
+                title = HOME_SCREEN_TITLE
+        }
+
+        console.log("screen ", screen, " title ", title);
+        this.props.navigator.resetTo({
+            screen,
+            title
+        });
+        this.closeNavigation();
+    }
+
+    //TODO: format the render function, split each one into a View and load the view
     render() {
         return (
             <View style={[styles.container, { width: Dimensions.get("window").width * 0.8 }]}>
