@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
+import { NEWS_SCREEN } from '../../utility/screenConstants'
 
 export default class CountryScreen extends Component {
     state = {
@@ -7,8 +8,16 @@ export default class CountryScreen extends Component {
         continent: ""
     }
 
-    handleCountryItemPressed = (countryPressed) => {
-        alert(countryPressed);
+    handleCountryItemPressed = (country) => {
+        this.props.navigator.push({
+            screen: NEWS_SCREEN,
+            title: country,
+            passProps: {
+                continent: this.props.continent,
+                newsObject: this.props.newsObject,
+                country: country
+            }
+        })
     }
 
     componentDidMount() {

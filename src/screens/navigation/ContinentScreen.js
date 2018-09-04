@@ -39,7 +39,7 @@ export default class ContinentScreen extends Component {
                 continent,
                 newsObject
             }
-        })
+        });
         
     }
 

@@ -13,9 +13,6 @@ const instructions = Platform.select({
 let DOMParser = xmlDom.DOMParser;
     
 export default class HomeScreen extends Component {
-  static navigatorStyle = {
-    navBarButtonColor: "orange",
-  }
 
   constructor(props) {
     super(props);
@@ -24,15 +21,15 @@ export default class HomeScreen extends Component {
 
   componentDidMount() {
     //TODO: move to a datafetcher data class for that purpose
-    fetch('https://punchng.com/feed/')
-        .then(response => response.text())
-        .then((responseText) => {
-          var parser = new DOMParser();
-          var doc = parser.parseFromString(responseText,"text/xml").documentElement;
-          console.log("************", doc);
-        }).catch((err) => {
-            console.log('fetch', err)
-        });
+    // fetch('https://punchng.com/feed/')
+    //     .then(response => response.text())
+    //     .then((responseText) => {
+    //       var parser = new DOMParser();
+    //       var doc = parser.parseFromString(responseText,"text/xml").documentElement;
+    //       console.log("************", doc);
+    //     }).catch((err) => {
+    //         console.log('fetch', err)
+    //     });
   }
 
   //TODO: refactor duplicate code in Favourite, continent and HomeScreen, pass a props or dispatch an action to handle it
@@ -50,7 +47,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text testID="welcome" style={styles.welcome}> to Vano News YOH!</Text>
+        <Text testID="welcome" style={styles.welcome}>Welcome to Vano News YOH!</Text>
         <Text style={styles.instructions}>To get started, Set up Icons and testing</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text testID="welcome">Holla</Text>
