@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { SIDE_DRAWER_TOGGLE_EVENT_ID } from '../../utility/screenConstants'
-
+import xmlDom from 'xmldom';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -10,10 +10,9 @@ const instructions = Platform.select({
 });
 
 
+let DOMParser = xmlDom.DOMParser;
+    
 export default class HomeScreen extends Component {
-  static navigatorStyle = {
-    navBarButtonColor: "orange",
-  }
 
   constructor(props) {
     super(props);
@@ -35,7 +34,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text testID="welcome" style={styles.welcome}> to Vano News YOH!</Text>
+        <Text testID="welcome" style={styles.welcome}>Welcome to Vano News YOH!</Text>
         <Text style={styles.instructions}>To get started, Set up Icons and testing</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text testID="welcome">Holla</Text>
