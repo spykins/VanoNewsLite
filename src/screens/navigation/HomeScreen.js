@@ -19,19 +19,6 @@ export default class HomeScreen extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
 
-  componentDidMount() {
-    //TODO: move to a datafetcher data class for that purpose
-    // fetch('https://punchng.com/feed/')
-    //     .then(response => response.text())
-    //     .then((responseText) => {
-    //       var parser = new DOMParser();
-    //       var doc = parser.parseFromString(responseText,"text/xml").documentElement;
-    //       console.log("************", doc);
-    //     }).catch((err) => {
-    //         console.log('fetch', err)
-    //     });
-  }
-
   //TODO: refactor duplicate code in Favourite, continent and HomeScreen, pass a props or dispatch an action to handle it
   onNavigatorEvent = (event) => {
     if (event.type === "NavBarButtonPress") {
