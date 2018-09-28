@@ -379,7 +379,7 @@
       "Business Day" : [ "http://businessdayonline.com/", "http://businessdayonline.com/feed/" ],
       "Complete Sports" : [ "http://www.completesportsnigeria.com/", "http://www.completesportsnigeria.com/feed/" ],
       "Daily Times" : [ "http://www.dailytimes.ng", "http://dailytimes.ng/feed/" ],
-      "Daily Trust" : [ "http://www.dailytrust.com.ng/", "http://www.dailytrust.com.ng/rss/feed.aspx?cat_id=1" ],
+      "Daily Trust" : [ "https://www.dailytrust.com.ng/", "https://www.dailytrust.com.ng/rss/feed.aspx?cat_id=1" ],
       "Guardian" : [ "http://guardian.ng/", "" ],
       "Leadership" : [ "http://www.leadership.ng/", "http://www.leadership.ng/feed/" ],
       "Nation" : [ "http://thenationonlineng.net/", "http://thenationonlineng.net/feed/" ],
